@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <!--Body content-->
+
+      <div class="jumbotron">
+        <h1>/{{board}}/ post #{{monitoredPost.no}}</h1>
+        <!-- <div ng-show="monitoredPost.ext" class="postimage">
+          <a ng-href='/board/{{board}}/{{thread}}/images/{{monitoredPost.tim}}{{monitoredPost.ext}}'>
+            <img src="/board/{{board}}/{{thread}}/thumbs/{{monitoredPost.tim}}s.jpg" alt="...">
+          </a>
+        </div> -->
+        <p ng-bind-html="monitoredPost.com"></p>
+      </div>
+
+      <table class="table table-striped">
+        <th>Image</th>
+        <th>Post Number</th>
+        <th>Comment</th>
+        <tr ng-repeat="post in posts">
+          <td>
+            <a ng-show="post.ext" ng-href='/board/{{board}}/{{thread}}/images/{{post.tim}}{{post.ext}}' class="thumbnail">
+              <img src="/board/{{board}}/{{thread}}/thumbs/{{post.tim}}s.jpg" alt="...">
+            </a>
+          </td>
+          <td>{{post.no}}</td>
+          <td ng-bind-html="post.com"></td>
+        </tr>
+      </table>
+
+  </div>
+</div>
